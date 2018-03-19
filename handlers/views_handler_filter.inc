@@ -674,9 +674,12 @@ class views_handler_filter extends views_handler {
       }
     }
 
+    /* For exposed filters we want to use the same URL identifier for two different filters (with an OR relationship)
+     * Specifically, if activity_id, or original_activity_id = value.
     if (!$this->view->display_handler->is_identifier_unique($form_state['id'], $form_state['values']['options']['expose']['identifier'])) {
       form_error($form['expose']['identifier'], t('This identifier is used by another handler.'));
     }
+    */
 
     // Filter out roles which weren't selected, so that they aren't exported.
     // This is purely cosmetic.
